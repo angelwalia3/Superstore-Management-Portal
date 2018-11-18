@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane fx:id="painfulpane" dividerPositions="0.31909547738693467" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="superstoremanagement.WareAdminPortal">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Label layoutX="195.0" layoutY="14.0" prefHeight="27.0" prefWidth="190.0" text="Warehouse Admin Portal" textAlignment="CENTER" AnchorPane.topAnchor="14.0">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label layoutX="41.0" layoutY="64.0" text="Own Warehouse:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblown" layoutX="162.0" layoutY="64.0" text="Label">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="btndisp" layoutX="442.0" layoutY="62.0" mnemonicParsing="false" onAction="#clickDispOwnInfo" text="Display Information" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="315.0" prefWidth="598.0">
+         <children>
+            <TextField fx:id="txtitemname" layoutX="96.0" layoutY="101.0" prefHeight="25.0" prefWidth="82.0" />
+            <TextField fx:id="txtitemtodisp" layoutX="30.0" layoutY="179.0" />
+            <TextField fx:id="txttoorder" layoutX="30.0" layoutY="219.0" />
+            <Button fx:id="btnOwnInfo" layoutX="31.0" layoutY="29.0" mnemonicParsing="false" onAction="#click" text="Browse Own Warehouse" />
+            <Button fx:id="btnseeitem" layoutX="197.0" layoutY="179.0" mnemonicParsing="false" onAction="#clickToSeeItem" text="Display Item" />
+            <Button fx:id="btnupdate" layoutX="197.0" layoutY="138.0" mnemonicParsing="false" onAction="#clickToUpdate" text="Update Item" />
+            <Button fx:id="del" layoutX="197.0" layoutY="219.0" mnemonicParsing="false" onAction="#clickToDelete" prefHeight="25.0" prefWidth="82.0" text="Delete Item" />
+            <Label layoutX="38.0" layoutY="105.0" text="Name" />
+            <Label layoutX="40.0" layoutY="142.0" text="Units" />
+            <TextField fx:id="txtitemunits" layoutX="96.0" layoutY="138.0" prefHeight="25.0" prefWidth="82.0" />
+            <ListView fx:id="listware" layoutX="381.0" layoutY="29.0" prefHeight="144.0" prefWidth="149.0" />
+            <Label layoutX="34.0" layoutY="72.0" text="Update item:" />
+            <Label layoutX="417.0" layoutY="13.0" text="Warehouse list" />
+            <Button fx:id="btnbrowsewarehouses" layoutX="403.0" layoutY="192.0" mnemonicParsing="false" onAction="#clickToBrowseWorld" text="Browse Warehouse" />
+            <Button fx:id="btnlogout" layoutX="436.0" layoutY="229.0" mnemonicParsing="false" onAction="#clickLogOut" text="Logout" />
+            <Button fx:id="btnadd" layoutX="212.0" layoutY="29.0" mnemonicParsing="false" onAction="#additem" text="Add Item" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

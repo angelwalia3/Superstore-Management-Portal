@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ItemInfo">
+   <children>
+      <Label layoutX="257.0" layoutY="23.0" text="Item Info&lt;&gt;">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label layoutX="79.0" layoutY="90.0" text="Item Name:" />
+      <Label layoutX="79.0" layoutY="132.0" text="Category:" />
+      <Label layoutX="79.0" layoutY="172.0" text="Sub-Category:" />
+      <Label layoutX="79.0" layoutY="214.0" text="Price:" />
+      <Label layoutX="79.0" layoutY="257.0" text="Quanitity:" />
+      <Button layoutX="237.0" layoutY="288.0" mnemonicParsing="false" text="Add to Cart" />
+      <Button layoutX="238.0" layoutY="326.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" text="View Cart" />
+      <Label layoutX="182.0" layoutY="90.0" text="Label" />
+      <Label layoutX="182.0" layoutY="132.0" text="Label" />
+      <Label layoutX="182.0" layoutY="172.0" text="Label" />
+      <Label layoutX="182.0" layoutY="214.0" text="Label" />
+      <Label layoutX="182.0" layoutY="257.0" text="Label" />
+      <Button layoutX="250.0" layoutY="361.0" mnemonicParsing="false" text="Back" />
+   </children>
+</AnchorPane>

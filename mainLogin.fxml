@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="superstoremanagement.MainLogin">
+   <children>
+      <Label layoutX="195.0" layoutY="31.0" text="Welcome To &lt;&gt; SuperStore">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="83.0" layoutY="85.0" text="Login as:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnSuper" layoutX="241.0" layoutY="125.0" mnemonicParsing="false" onAction="#superClick" prefHeight="25.0" prefWidth="130.0" text="Super User" />
+      <Button fx:id="btnWare" layoutX="241.0" layoutY="166.0" mnemonicParsing="false" onAction="#wareClick" prefHeight="25.0" prefWidth="130.0" text="Warehouse Admin" />
+      <Button fx:id="btnStore" layoutX="241.0" layoutY="209.0" mnemonicParsing="false" onAction="#storeClick" prefHeight="25.0" prefWidth="130.0" text="Store Admin" />
+      <Button fx:id="btnGuest" layoutX="241.0" layoutY="248.0" mnemonicParsing="false" onAction="#clickUser" text="Guest User/Customer" />
+      <Button fx:id="btnExit" layoutX="287.0" layoutY="333.0" mnemonicParsing="false" onAction="#clickExit" text="EXIT" />
+   </children>
+</AnchorPane>

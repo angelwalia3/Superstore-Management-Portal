@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="back" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="superstoremanagement.StoreConstuct">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="198.0" layoutY="24.0" text="Store Contruction: Superuser">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtstorename" layoutX="226.0" layoutY="102.0" />
+            <TextField fx:id="txtpass" layoutX="226.0" layoutY="182.0" />
+            <Button layoutX="243.0" layoutY="287.0" mnemonicParsing="false" onAction="#clickCreateStore" text="Create Store" />
+            <Label layoutX="83.0" layoutY="106.0" text="Enter Store Name:" />
+            <Label layoutX="90.0" layoutY="186.0" text="Enter Password:" />
+            <Label layoutX="59.0" layoutY="147.0" text="Enter Admin Userame:" />
+            <TextField fx:id="txtusername" layoutX="226.0" layoutY="143.0" />
+            <Label layoutX="61.0" layoutY="232.0" text="Parent Warehouse ID:" />
+            <TextField fx:id="txtparid" layoutX="226.0" layoutY="228.0" />
+            <Button fx:id="btnNo" layoutX="258.0" layoutY="328.0" mnemonicParsing="false" onAction="#clicktocancel" text="Cancel" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
