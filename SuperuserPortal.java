@@ -234,27 +234,28 @@ public class SuperuserPortal implements Initializable {
 
     @FXML
     private void droptablestore(ActionEvent event) {
+        
+        
         r=listStore.getSelectionModel().getSelectedItem();
         String sql="drop table "+r;
         String sql2="delete from storeadmins where Storename='"+r+"'";
         connectivity c=new connectivity();
+        List<String> a=new ArrayList<String>();
         try{
-           String g;
             c.st.executeUpdate(sql);
             c.st.executeUpdate(sql2);
-            List<String> h= new ArrayList<String>();
+            String g;
         sql = "select * from storeadmins";
         c.rs=c.st.executeQuery(sql);
         while(c.rs.next()){
             g=c.rs.getString("Storename");
-            h.add(g);
-            
+            a.add(g);
+                       
         }
-        
-        ObservableList<String> observableList2 = FXCollections.observableList(h);
-        listStore.setItems(observableList2);
-            
+        ObservableList<String> observableList = FXCollections.observableList(a);
+        listStore.setItems(observableList);
         }catch(Exception e){
+            System.out.println(e);
             
         }
         
