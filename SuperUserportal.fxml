@@ -20,7 +20,7 @@
       <Button fx:id="btnSSel" layoutX="433.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickStoreSel" text="Select" />
       <Button fx:id="btnWConst" layoutX="56.0" layoutY="324.0" mnemonicParsing="false" onAction="#clickWareConstruction" text="New Warehouse Construction" />
       <Button fx:id="btnSConst" layoutX="385.0" layoutY="324.0" mnemonicParsing="false" onAction="#clickStroeConstruct" text="New Store Construction" />
-      <Button fx:id="btnLogOut" layoutX="246.0" layoutY="419.0" mnemonicParsing="false" onAction="#clickLogOut" text="Logout as SuperUser" />
+      <Button fx:id="btnLogOut" layoutX="237.0" layoutY="371.0" mnemonicParsing="false" onAction="#clickLogOut" text="Logout as SuperUser" />
       <Button fx:id="btndropware" layoutX="118.0" layoutY="358.0" mnemonicParsing="false" onAction="#droptableware" text="Delete" />
       <Button fx:id="dropstore" layoutX="431.0" layoutY="358.0" mnemonicParsing="false" onAction="#droptablestore" text="Delete" />
    </children>

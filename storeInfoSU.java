@@ -6,7 +6,11 @@
 package superstoremanagement;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -31,7 +35,7 @@ public class storeInfoSU implements Initializable {
     private Label lblpar;
     
     @FXML
-    private ListView<?> listinventory;
+    private ListView<String> listinventory;
 
     /**
      * Initializes the controller class.
@@ -41,7 +45,7 @@ public class storeInfoSU implements Initializable {
     
     public void setf(String r){
         f=r;
-        
+        List<String> a=new ArrayList<String>();
         try{
         connectivity c=new connectivity();
         String sql = "select * from storeadmins where Storename = '"+f+"'";
@@ -58,6 +62,20 @@ public class storeInfoSU implements Initializable {
             lblpar.setText(""+c.rs.getInt("ParwareID"));
            
         }
+        
+         String g;
+        sql = "select * from "+f;
+        c.rs=c.st.executeQuery(sql);
+        while(c.rs.next()){
+            g=c.rs.getString("Item");
+            a.add(g);
+            
+        }
+        
+        ObservableList<String> observableList = FXCollections.observableList(a);
+        listinventory.setItems(observableList);
+        
+        
         
     }catch (Exception e){
         
