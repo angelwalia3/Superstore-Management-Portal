@@ -6,7 +6,11 @@
 package superstoremanagement;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -29,14 +33,14 @@ public class Warehosueinfo implements Initializable {
     @FXML
     private Label lbladmin;
     @FXML
-    private ListView<?> listitem;
+    private ListView<String> listitem;
     @FXML
-    private ListView<?> liststore;
+    private ListView<String> liststore;
     
     String f;
     public void setf(String r){
         f=r;
-        
+        List<String> a=new ArrayList<String>();
         try{
         connectivity c=new connectivity();
         String sql = "select * from wareadmins where Warehousename = '"+f+"'";
@@ -51,6 +55,35 @@ public class Warehosueinfo implements Initializable {
             lbladmin.setText(""+c.rs.getString("Username"));
            
         }
+        
+        
+        String g;
+        sql = "select * from storeadmins where ParwareID ="+lblid.getText();
+        c.rs=c.st.executeQuery(sql);
+        while(c.rs.next()){
+            g=c.rs.getString("Storename");
+            a.add(g);
+            
+        }
+        List<String> h= new ArrayList<String>();
+        sql = "select * from "+f;
+        c.rs=c.st.executeQuery(sql);
+        while(c.rs.next()){
+            g=c.rs.getString("Item");
+            h.add(g);
+            
+        }
+        
+        
+        
+        ObservableList<String> observableList = FXCollections.observableList(a);
+        liststore.setItems(observableList);
+        ObservableList<String> observableList2 = FXCollections.observableList(h);
+        listitem.setItems(observableList2);
+        
+        
+        
+        
         
     }catch (Exception e){
         

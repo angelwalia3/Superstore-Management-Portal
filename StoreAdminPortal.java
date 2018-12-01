@@ -77,9 +77,9 @@ public class StoreAdminPortal implements Initializable {
         
         try{
             FXMLLoader fxml=new FXMLLoader();
-            Parent root1 =fxml.load(getClass().getResource("Warehosueinfo.fxml").openStream());
+            Parent root1 =fxml.load(getClass().getResource("storeInfoSU.fxml").openStream());
         
-            Warehosueinfo out = new Warehosueinfo();
+            storeInfoSU out = new storeInfoSU();
             out=fxml.getController();
             out.f=r;
             out.setf(r);
@@ -218,9 +218,9 @@ public class StoreAdminPortal implements Initializable {
         try{
             FXMLLoader fxml=new FXMLLoader();
             
-            AnchorPane pane = fxml.load(getClass().getResource("AddingItem.fxml").openStream());
+            AnchorPane pane = fxml.load(getClass().getResource("AddingItem_1.fxml").openStream());
                     
-            AddingItem out = new AddingItem();
+            AddingItem_1 out = new AddingItem_1();
             out=fxml.getController();
             out.getname(h);
             
