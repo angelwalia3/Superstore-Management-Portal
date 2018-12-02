@@ -66,7 +66,114 @@ public class StoreAdminPortal implements Initializable {
     String h;
     public void setname(String k){
         lblownname.setText(k);
-        h=k;}
+        h=k;
+    connectivity c = new connectivity();
+    
+    try{
+            
+         String sql = "select * from ack where SendTo = '"+h+"'";
+        System.out.println(sql);
+        c.rs=c.st.executeQuery(sql);
+        if(c.rs.next()==true){
+            FXMLLoader fxml=new FXMLLoader();
+            Parent root1 =fxml.load(getClass().getResource("orderacknow.fxml").openStream());
+            String item=c.rs.getString("Item");
+            int qty =c.rs.getInt("Quantity");
+            orderacknow out = new orderacknow();
+            out=fxml.getController();
+            
+            
+            
+        Scene scene = new Scene(root1);
+        Stage stage=new Stage();
+        stage.setScene(scene);
+        out.setf(h,item,qty,stage);
+        stage.show();
+            
+        }
+                  
+        /*   
+            
+        String g;
+        sql = "select * from storetowareorders";
+        c.rs=c.st.executeQuery(sql);
+        while(c.rs.next()){
+            if(c.rs.getInt("WareID")==hello){
+                String store=c.rs.getString("Store");
+                String item=c.rs.getString("Item");
+                int qty = c.rs.getInt("Quantity");
+                
+                
+            FXMLLoader fxml=new FXMLLoader();
+            Parent root1 =fxml.load(getClass().getResource("orderpopup.fxml").openStream());
+        
+            orderpopup out = new orderpopup();
+            out=fxml.getController();
+            
+            
+            
+        Scene scene = new Scene(root1);
+        Stage stage=new Stage();
+        stage.setScene(scene);
+        out.setf(h,item,store,qty,stage);
+        stage.show();
+            
+        
+        
+        
+                
+            }
+            
+            
+            
+            
+        }
+        
+        */
+        }
+        catch(Exception e){
+            System.out.println("Cant . just cant : "+e);
+        }
+        
+    }    
+
+    @FXML
+    private void clickDispOwnInfo(ActionEvent event) {
+        String r= lblownname.getText();
+        
+        
+        try{
+            FXMLLoader fxml=new FXMLLoader();
+            Parent root1 =fxml.load(getClass().getResource("Warehosueinfo.fxml").openStream());
+        
+            Warehosueinfo out = new Warehosueinfo();
+            out=fxml.getController();
+            out.f=r;
+            out.setf(r);
+            
+        Scene scene = new Scene(root1);
+        Stage stage=new Stage();
+        stage.setScene(scene);
+        stage.show();
+            
+        }
+        catch (Exception e){
+            System.out.println("Can't open window!");
+            e.printStackTrace();
+        }
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
     
     
     @FXML
