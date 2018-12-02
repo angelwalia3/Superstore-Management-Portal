@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Cart">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="superstoremanagement.Cart">
    <children>
       <Label layoutX="237.0" layoutY="14.0" text="Cart for Customer">
          <font>
@@ -24,11 +24,12 @@
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label layoutX="466.0" layoutY="132.0" text="Label" />
-      <Label layoutX="466.0" layoutY="185.0" text="Label" />
-      <Button layoutX="427.0" layoutY="240.0" mnemonicParsing="false" text="Checkout" />
-      <Button layoutX="440.0" layoutY="340.0" mnemonicParsing="false" text="Back" />
-      <ListView layoutX="54.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button layoutX="111.0" layoutY="340.0" mnemonicParsing="false" text="Remove Item" />
+      <Label fx:id="lbltotal" layoutX="466.0" layoutY="132.0" text="Label" />
+      <Label fx:id="lblfund" layoutX="466.0" layoutY="185.0" text="Label" />
+      <Button fx:id="btnchk" layoutX="427.0" layoutY="240.0" mnemonicParsing="false" onAction="#clicktocheckout" text="Checkout" />
+      <Button fx:id="btnback" layoutX="440.0" layoutY="290.0" mnemonicParsing="false" onAction="#clicktogoback" text="Back" />
+      <ListView fx:id="itemlist" layoutX="54.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="btnremove" layoutX="276.0" layoutY="228.0" mnemonicParsing="false" onAction="#clicktoremove" text="Remove Item" />
+      <Button fx:id="btnview" layoutX="275.0" layoutY="188.0" mnemonicParsing="false" onAction="#clicktoview" text="Select to view" />
    </children>
 </AnchorPane>

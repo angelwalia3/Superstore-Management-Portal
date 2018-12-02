@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.36432160804020103" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="superstoremanagement.CustomerPortal">
+<SplitPane fx:id="painfulpane" dividerPositions="0.36432160804020103" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="superstoremanagement.CustomerPortal">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="104.0" prefWidth="598.0">
          <children>
@@ -27,17 +27,15 @@
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="288.0" prefWidth="598.0">
          <children>
             <Label layoutX="80.0" layoutY="56.0" text="List of Stores" />
-            <Label layoutX="272.0" layoutY="48.0" text="Store ID of the store: " />
-            <Label fx:id="Lstoreid" layoutX="399.0" layoutY="48.0" text="Label" />
             <ListView fx:id="liststores" layoutX="24.0" layoutY="73.0" prefHeight="156.0" prefWidth="200.0" />
             <Button fx:id="btnaddfunds" layoutX="174.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickAddFunds" text="Add Funds" />
             <Button fx:id="btnselstore" layoutX="272.0" layoutY="204.0" mnemonicParsing="false" onAction="#clickSelectStore" text="Select Store" />
-            <Button layoutX="452.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickFindStore" text="Find Store" />
+            <Button fx:id="btnFind" layoutX="452.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickFindStore" text="Find Store" />
             <Button fx:id="btnviewcart" layoutX="277.0" layoutY="85.0" mnemonicParsing="false" onAction="#clickviewCart" prefHeight="25.0" prefWidth="149.0" text="View Cart" />
             <TextField fx:id="txtfunds" layoutX="24.0" layoutY="15.0" prefHeight="25.0" prefWidth="130.0" />
             <TextField fx:id="txtstore" layoutX="299.0" layoutY="15.0" prefHeight="25.0" prefWidth="141.0" />
             <Button fx:id="btnlogout" layoutX="413.0" layoutY="204.0" mnemonicParsing="false" onAction="#clickLogOut" text="Logout" />
-            <Button layoutX="273.0" layoutY="168.0" mnemonicParsing="false" text="Sort" />
+            <Button fx:id="btnsort" layoutX="273.0" layoutY="168.0" mnemonicParsing="false" onAction="#cllicktosort" text="Sort" />
          </children></AnchorPane>
   </items>
 </SplitPane>
