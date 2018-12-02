@@ -47,8 +47,12 @@ public class MainLogin implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
+    /**
+     * When the button super user is clicked, it opens a new window for super user login and asks loginID password. Shows necessary exceptions if window has an error and cant be opened.
+     * @param event Button click
+     */
     @FXML
     private void superClick(ActionEvent event) {
         try{
@@ -68,6 +72,10 @@ public class MainLogin implements Initializable {
         
     }
 
+    /**
+     * When you want to log in as warehouse admin, and you click the button, a new login window for warehouse admin appears.
+     * @param event
+     */
     @FXML
     private void wareClick(ActionEvent event) {
         try{
@@ -88,6 +96,10 @@ public class MainLogin implements Initializable {
         
     }
 
+    /**
+     * When u want to login as store admin, a new window for store admin login page is popped up.
+     * @param event
+     */
     @FXML
     private void storeClick(ActionEvent event) {
         try{
@@ -107,6 +119,10 @@ public class MainLogin implements Initializable {
         
     }
 
+    /**
+     * When u wish to be a guest user, clicking this would simply open the customer portal where u can set necessary details about yourself.
+     * @param event
+     */
     @FXML
     private void clickUser(ActionEvent event) {
         try{
@@ -144,6 +160,10 @@ public class MainLogin implements Initializable {
         
     }
 
+    /**
+     * Click exit would stop the program and close the superstore.
+     * @param event
+     */
     @FXML
     private void clickExit(ActionEvent event) {
         

@@ -24,7 +24,7 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author Pallavi
+ * @author Angel & Medha
  */
 public class possiblestorelist implements Initializable {
 
@@ -35,7 +35,12 @@ public class possiblestorelist implements Initializable {
 
     private String pn;
     private int id;
-    
+
+    /**
+     * Sets up the intitial store list with names in the list view. Initial names for buttons are given. Sets initial gui interface. Appropriate exceptions when window cant be opened due to some error.
+     * @param h
+     * @param id
+     */
     public void setset(String h, int id){
         pn=h; this.id=id;
         
@@ -86,8 +91,12 @@ public class possiblestorelist implements Initializable {
        
         
         
-    }    
+    }
 
+    /**
+     * This provides the functionality when u select a store from the store list, and select the store. it open a new store window which lets you browse through various components of the selected store.
+     * @param event Button click
+     */
     @FXML
     private void clickToSelect(ActionEvent event) {
         String r=liststores.getSelectionModel().getSelectedItem();

@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author Pallavi
+ * @author Angel & Medha
  */
 public class cartitemview implements Initializable {
 
@@ -39,8 +39,14 @@ public class cartitemview implements Initializable {
     private int id;
     private String item;
     private Stage stage;
-    
-    
+
+
+    /**
+     * cretes Sets the initial values of the labels,creates item list, connects database.
+     * @param id
+     * @param item
+     * @param stage
+     */
     public void setset(int id, String item, Stage stage){
         this.id=id;
         this.item=item;
@@ -82,8 +88,12 @@ public class cartitemview implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
+    /**
+     * Functionality of what happens when back button is clicked. The current information window is closed, taking us back to previous window.
+     * @param event button click
+     */
     @FXML
     private void clicktoback(ActionEvent event) {
         stage.close();

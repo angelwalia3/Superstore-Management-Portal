@@ -42,8 +42,12 @@ public class StoreConstuct implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
+    /**
+     * This method takes the values of the four inputs entered, and based on that creates a new store under the mentioned store admin (store admin is also created), with the given details about admin ID Password and store's name ,etc.
+     * @param event
+     */
     @FXML
     private void clickCreateStore(ActionEvent event) {
         
@@ -128,6 +132,10 @@ public class StoreConstuct implements Initializable {
         
     }
 
+    /**
+     * clicking on the cancel button will close the current window and take you back to the previous super user portal.
+     * @param event
+     */
     @FXML
     private void clicktocancel(ActionEvent event) {
         try{

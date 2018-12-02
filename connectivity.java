@@ -9,7 +9,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 /**
  *
- * @author Pallavi
+ * @author Angel & Medha
  */
 public class connectivity {
     
@@ -17,9 +17,11 @@ public class connectivity {
     public Statement st;
     public PreparedStatement pst;
     public ResultSet rs;
-    
-    
-    
+
+
+    /**
+     * Main connection with the databse on a local host
+     */
     public connectivity(){
         try{
             Class.forName("com.mysql.jdbc.Driver");

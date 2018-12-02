@@ -64,118 +64,20 @@ public class StoreAdminPortal implements Initializable {
     }    
 
     String h;
+
+    /**
+     * sets initial labels names
+     * @param k the label name to be used
+     */
     public void setname(String k){
         lblownname.setText(k);
-        h=k;
-    connectivity c = new connectivity();
-    
-    try{
-            
-         String sql = "select * from ack where SendTo = '"+h+"'";
-        System.out.println(sql);
-        c.rs=c.st.executeQuery(sql);
-        if(c.rs.next()==true){
-            FXMLLoader fxml=new FXMLLoader();
-            Parent root1 =fxml.load(getClass().getResource("orderacknow.fxml").openStream());
-            String item=c.rs.getString("Item");
-            int qty =c.rs.getInt("Quantity");
-            orderacknow out = new orderacknow();
-            out=fxml.getController();
-            
-            
-            
-        Scene scene = new Scene(root1);
-        Stage stage=new Stage();
-        stage.setScene(scene);
-        out.setf(h,item,qty,stage);
-        stage.show();
-            
-        }
-                  
-        /*   
-            
-        String g;
-        sql = "select * from storetowareorders";
-        c.rs=c.st.executeQuery(sql);
-        while(c.rs.next()){
-            if(c.rs.getInt("WareID")==hello){
-                String store=c.rs.getString("Store");
-                String item=c.rs.getString("Item");
-                int qty = c.rs.getInt("Quantity");
-                
-                
-            FXMLLoader fxml=new FXMLLoader();
-            Parent root1 =fxml.load(getClass().getResource("orderpopup.fxml").openStream());
-        
-            orderpopup out = new orderpopup();
-            out=fxml.getController();
-            
-            
-            
-        Scene scene = new Scene(root1);
-        Stage stage=new Stage();
-        stage.setScene(scene);
-        out.setf(h,item,store,qty,stage);
-        stage.show();
-            
-        
-        
-        
-                
-            }
-            
-            
-            
-            
-        }
-        
-        */
-        }
-        catch(Exception e){
-            System.out.println("Cant . just cant : "+e);
-        }
-        
-    }    
+        h=k;}
 
-    @FXML
-    private void clickDispOwnInfo(ActionEvent event) {
-        String r= lblownname.getText();
-        
-        
-        try{
-            FXMLLoader fxml=new FXMLLoader();
-            Parent root1 =fxml.load(getClass().getResource("Warehosueinfo.fxml").openStream());
-        
-            Warehosueinfo out = new Warehosueinfo();
-            out=fxml.getController();
-            out.f=r;
-            out.setf(r);
-            
-        Scene scene = new Scene(root1);
-        Stage stage=new Stage();
-        stage.setScene(scene);
-        stage.show();
-            
-        }
-        catch (Exception e){
-            System.out.println("Can't open window!");
-            e.printStackTrace();
-        }
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    }
-    
-    
+
+    /**
+     * Use this method and button when u want to display the information of the store you're a store admin for. a new window showing information pops up.
+     * @param event
+     */
     @FXML
     private void dispowninfo(ActionEvent event) {
         String r= h;
@@ -205,6 +107,10 @@ public class StoreAdminPortal implements Initializable {
         
     }
 
+    /**
+     * on clicking the browse store button, a new window is popped, allowing you to browse through the categories,sub-categories and items of your own store. It also allows you to make changes in your store's inventory there.
+     * @param event
+     */
     @FXML
     private void browseStore(ActionEvent event) {
         
@@ -235,6 +141,10 @@ public class StoreAdminPortal implements Initializable {
         
     }
 
+    /**
+     * When u click display button, it opens a new item information window for admins where u can view item properties.
+     * @param event
+     */
     @FXML
     private void clickDisp(ActionEvent event) {
         
@@ -262,6 +172,10 @@ public class StoreAdminPortal implements Initializable {
         }
     }
 
+    /**
+     * After entering the desired name and units for the item, this method simply intructs the store admin to add such an item in its store's inventory.
+     * @param event
+     */
     @FXML
     private void clickUpdate(ActionEvent event) {
         int units = Integer.parseInt(txtunits.getText());
@@ -300,6 +214,10 @@ public class StoreAdminPortal implements Initializable {
         
     }
 
+    /**
+     * When u click log out, this method closes the current window and takes u back to the main login window.
+     * @param event
+     */
     @FXML
     private void clickLogOut(ActionEvent event) {
         try{
@@ -319,6 +237,10 @@ public class StoreAdminPortal implements Initializable {
         
     }
 
+    /**
+     * When u enter an items name, this method first check if that item exists. if it does, exceptions are thrown. if not, then it adds the new item in its own store.
+     * @param event
+     */
     @FXML
     private void clickToAdd(ActionEvent event) {
         
@@ -340,6 +262,10 @@ public class StoreAdminPortal implements Initializable {
         }
     }
 
+    /**
+     * When the delete button is clicked in the screen, it first checks if such an item exists in the store. if no, it shows appropriate exceptions. If yes, the  it proceeds to delete that items data from its own store.
+     * @param event
+     */
     @FXML
     private void btnDelete(ActionEvent event) {
         

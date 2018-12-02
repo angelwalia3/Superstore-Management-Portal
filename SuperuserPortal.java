@@ -94,7 +94,11 @@ public class SuperuserPortal implements Initializable {
     }    
 
     String r;
-        
+
+    /**
+     * this method works when the button select is clicked. After selecting a warehouse from the list view, this method opens up a warehouse info. page where all info. relevant to the superuser is displayed.
+     * @param event
+     */
     @FXML
     private void clickWSel(ActionEvent event) {
         r=listWare.getSelectionModel().getSelectedItem();
@@ -130,6 +134,10 @@ public class SuperuserPortal implements Initializable {
        
     }
 
+    /**
+     *  this method works when the button select is clicked. After selecting a store from the list view, this method opens up a store info. page where all info. relevant to the superuser is displayed.
+     * @param event
+     */
     @FXML
     private void clickStoreSel(ActionEvent event) {
         r=listStore.getSelectionModel().getSelectedItem();
@@ -157,6 +165,10 @@ public class SuperuserPortal implements Initializable {
         
     }
 
+    /**
+     * When warehouse construction has been intructed by the SU, then this opens a new window where all the details of the warehouse and its admin can be entered for construction.
+     * @param event
+     */
     @FXML
     private void clickWareConstruction(ActionEvent event) {
         
@@ -175,6 +187,10 @@ public class SuperuserPortal implements Initializable {
         
     }
 
+    /**
+     * When store construction has been intructed by the SU, then this opens a new window where all the details of the store and its admin can be entered for construction.
+     * @param event
+     */
     @FXML
     private void clickStroeConstruct(ActionEvent event) {
         try{
@@ -191,6 +207,10 @@ public class SuperuserPortal implements Initializable {
         }
     }
 
+    /**
+     * It activates when log out is clicked. it logs u out as a super user and takes u back to the main login page.
+     * @param event
+     */
     @FXML
     private void clickLogOut(ActionEvent event) {
         try{
@@ -205,6 +225,10 @@ public class SuperuserPortal implements Initializable {
             }
     }
 
+    /**
+     * After selecting a warehouse from the list-view, if u click delete, this method deletes that warehouse for the superstore along with its admin.
+     * @param event
+     */
     @FXML
     private void droptableware(ActionEvent event) {
         r=listWare.getSelectionModel().getSelectedItem();
@@ -232,6 +256,9 @@ public class SuperuserPortal implements Initializable {
         
     }
 
+    /**
+     *  After selecting a store from the list-view, if u click delete, this method deletes that store for the superstore along with its admin.* @param event
+     */
     @FXML
     private void droptablestore(ActionEvent event) {
         

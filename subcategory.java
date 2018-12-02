@@ -27,7 +27,7 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author Pallavi
+ * @author Angel & Medha
  */
 public class subcategory implements Initializable {
 
@@ -59,8 +59,13 @@ public class subcategory implements Initializable {
     private Button btnsortsub;
     @FXML
     private Button btnsortitem;
-    
-    
+
+
+    /**
+     * initialises category list view with all categories under that store. initializes button names. establishes database connectivity.
+     * @param s
+     * @param own
+     */
     public void getname(String s,String own){
         h=s;
         ow=own;
@@ -95,8 +100,12 @@ public class subcategory implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
+    /**
+     * When u select a category from the list-view and click select, this method first verifies if the category exists. if yes, then it shows the sub-categories under that category in the list view for sub-categories.
+     * @param event
+     */
     @FXML
     private void cat(ActionEvent event) {
         String r=catlist.getSelectionModel().getSelectedItem();
@@ -131,6 +140,10 @@ public class subcategory implements Initializable {
         
     }
 
+    /**
+     * When u choose a subcategory from the list view and click select, this method searches the items under that subcategory and displays them in the list view for items.
+     * @param event
+     */
     @FXML
     private void subcat(ActionEvent event) {
         
@@ -162,6 +175,10 @@ public class subcategory implements Initializable {
         
     }
 
+    /**
+     * When u click view item button after selecting an item from the list view, this method opens a new window where the selected item's information is displayed.
+     * @param event
+     */
     @FXML
     private void item(ActionEvent event) {
         String r=itemlist.getSelectionModel().getSelectedItem();
@@ -188,6 +205,10 @@ public class subcategory implements Initializable {
         
     }
 
+    /**
+     * On the event of the button click for sorting in categories, all the categories in list view get sroted alphabetically.
+     * @param event
+     */
     @FXML
     private void tosortcat(ActionEvent event) {
         List<String> a=new ArrayList<String>();
@@ -216,6 +237,10 @@ public class subcategory implements Initializable {
         }
     }
 
+    /**
+     * On the event of the button click for sorting in sub-categories, all the sub-cats in list view get sroted alphabetically.
+     * @param event
+     */
     @FXML
     private void tosortsub(ActionEvent event) {
         
@@ -249,6 +274,10 @@ public class subcategory implements Initializable {
         
     }
 
+    /**
+     * On the event of the button click for sorting in items, all the items in list view get sroted alphabetically.
+     * @param event
+     */
     @FXML
     private void tosortitem(ActionEvent event) {
         

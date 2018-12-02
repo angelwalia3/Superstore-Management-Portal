@@ -21,7 +21,7 @@ import javafx.scene.layout.AnchorPane;
 /**
  * FXML Controller class
  *
- * @author Pallavi
+ * @author Angel & Medha
  */
 public class StoreAdminLogin implements Initializable {
 
@@ -40,8 +40,12 @@ public class StoreAdminLogin implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
+    /**
+     * When you enter your credentials and click login, which is the actionevent for this method, it first verifies the credentials. If they matcg, it takes you to the store admin portal, otherwise shows an exception window.
+     * @param event
+     */
     @FXML
     private void clickEnter(ActionEvent event) {
         

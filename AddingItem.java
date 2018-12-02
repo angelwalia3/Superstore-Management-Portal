@@ -18,10 +18,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 /**
- * FXML Controller class
+ * FXML Controller class for adding an item
  *
- * @author Pallavi
+ * @author Angel and Medha
  */
+
 public class AddingItem implements Initializable {
 
     @FXML
@@ -51,19 +52,31 @@ public class AddingItem implements Initializable {
     String h;
     @FXML
     private AnchorPane backpane;
+
+    /**
+     * updates current parameter
+     * @param h the parameter to which current h should be set to
+     */
     public void getname( String h){
         this.h=h;
         
     }
-    
-    
-    
-   
+
+
+    /**
+     *  method necessary for initialization
+     * @param url
+     * @param rb
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
+    /**
+     * Describes the functionality that occurs when the event of clicking the OK button takes place. It adds an item by the admins with the desired characteristics.
+     * @param event describes the button click here
+     */
     @FXML
     private void clickOK(ActionEvent event) {
         
@@ -110,6 +123,10 @@ public class AddingItem implements Initializable {
         
     }
 
+    /**
+     * Describes what happens when the cancel button is clicked. The control is taken back to the previous portal.
+     * @param event  the action of clicking cancel button here
+     */
     @FXML
     private void clickcancel(ActionEvent event) {
         

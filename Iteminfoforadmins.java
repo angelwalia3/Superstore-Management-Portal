@@ -19,7 +19,7 @@ import javafx.scene.layout.AnchorPane;
 /**
  * FXML Controller class
  *
- * @author Pallavi
+ * @author Angel & Medha
  */
 public class Iteminfoforadmins implements Initializable {
 
@@ -54,6 +54,13 @@ public class Iteminfoforadmins implements Initializable {
     private String exti;
     private String extw;
     private int own;
+
+    /**
+     * establishes connectivity with the database. Sets initial names/values for the labels and buttons. Also forms the list view. Basically sets initial gui up.
+     * @param item
+     * @param ware
+     * @param own
+     */
     public void getname(String item,String ware,int own){
         exti=item;
         extw=ware;
@@ -94,8 +101,12 @@ public class Iteminfoforadmins implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
+    /**
+     * When u add an integer units and click update, the label *quantity* on the same page gets updated to the integer you inputted.
+     * @param event Button click
+     */
     @FXML
     private void updateunits(ActionEvent event) {
         int units = Integer.parseInt(txtunits.getText());
@@ -114,6 +125,10 @@ public class Iteminfoforadmins implements Initializable {
         
     }
 
+    /**
+     * When u enter an integer cost and click update, the label price, on the same page gets updated with the current value.
+     * @param event button click
+     */
     @FXML
     private void updatecost(ActionEvent event) {
         int cost = Integer.parseInt(txtcost.getText());

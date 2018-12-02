@@ -19,10 +19,13 @@ import javafx.stage.Stage;
 
 
 public class SuperStoreManagement extends Application {
-    
-    
-    
-    
+
+
+    /**
+     * This method starts the superstore by opening up the main login window for the superstore.
+     * @param stage main stage that has to be started
+     * @throws Exception
+     */
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("mainLogin.fxml"));

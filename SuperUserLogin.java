@@ -42,8 +42,12 @@ public class SuperUserLogin implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
+    /**
+     * This method takes in the username and password and verifies it. if it does not match, it throws an exception window, otherwise it opens up the super user portal for the superuser.
+     * @param event
+     */
     @FXML
     private void clickEnter(ActionEvent event) {
         String entername=txtUname.getText();

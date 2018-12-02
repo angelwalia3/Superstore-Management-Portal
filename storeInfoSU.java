@@ -42,7 +42,11 @@ public class storeInfoSU implements Initializable {
      */
     
     String f;
-    
+
+    /**
+     * sets initial values of the labels,buttons, and creates list view.
+     * @param r
+     */
     public void setf(String r){
         f=r;
         List<String> a=new ArrayList<String>();

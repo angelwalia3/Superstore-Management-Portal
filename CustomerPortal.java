@@ -30,7 +30,7 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author Pallavi
+ * @author Angel & Medha
  */
 public class CustomerPortal implements Initializable {
 
@@ -66,7 +66,11 @@ public class CustomerPortal implements Initializable {
 
     
      private int ID;
-    
+
+    /**
+     * establishes connectibility with database and creates tables. Sets initial label/button texts.
+     * @param id customer id
+     */
     public void getID (int id){
         this.ID=id;
         
@@ -134,15 +138,22 @@ public class CustomerPortal implements Initializable {
         
         
         // TODO
-    }    
-    
-    
-    
+    }
+
+
+    /**
+     * sets current stage.
+     * @param s
+     */
     public void getstage(Stage s){
         this.s=s;
     }
-    
 
+
+    /**
+     * As the button add funds is pressed, the value of the label is incremented by the same amount and customer has more funds.
+     * @param event Button click
+     */
     @FXML
     private void clickAddFunds(ActionEvent event) {
         try{
@@ -158,6 +169,10 @@ public class CustomerPortal implements Initializable {
         
     }
 
+    /**
+     * When you select a store to browse through its contents, it opens a new window showing necessary info.
+     * @param event Button click
+     */
     @FXML
     private void clickSelectStore(ActionEvent event) {
         
@@ -184,6 +199,10 @@ public class CustomerPortal implements Initializable {
       
     }
 
+    /**
+     * The find store method finds the store with the highest matching characters we have entered as input and displays it on the store list.
+     * @param event Button click
+     */
     @FXML
     private void clickFindStore(ActionEvent event) {
         
@@ -212,6 +231,10 @@ public class CustomerPortal implements Initializable {
         
     }
 
+    /**
+     * This provides a way to view the unique cart associated to each customer. A new Cart window/Stage is opened with necessary information.
+     * @param event Button click
+     */
     @FXML
     private void clickviewCart(ActionEvent event) {
         
@@ -238,6 +261,10 @@ public class CustomerPortal implements Initializable {
         
     }
 
+    /**
+     * Logs the current customer out of the data base. Main login page reappears.
+     * @param event
+     */
     @FXML
     private void clickLogOut(ActionEvent event) {
         
@@ -260,6 +287,10 @@ public class CustomerPortal implements Initializable {
         s.close();
     }
 
+    /**
+     * when u click sort, the stores list view is sorted aphabetically and displayed. this function works according to the event-clicking sort button.
+     * @param event
+     */
     @FXML
     private void cllicktosort(ActionEvent event) {
         List<String> a=new ArrayList<String>();
