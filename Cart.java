@@ -101,7 +101,7 @@ public class Cart implements Initializable {
 
     @FXML
     private void clicktocheckout(ActionEvent event) {
-         
+         int finalmoney=0;
         connectivity c=new connectivity();
         
         try{
@@ -113,19 +113,22 @@ public class Cart implements Initializable {
             String g =c.rs.getString("Store");
             String h=c.rs.getString("Item");
             int t= c.rs.getInt("Quantity");
+            int money=c.rs.getInt("Total");
             connectivity x=new connectivity();
-            int id=0;
+            int id2=0;
             sql="select * from storeadmins where Storename= '"+g+"'";
             x.rs=x.st.executeQuery(sql);
             System.out.println(sql);
             while(x.rs.next()){
-                id =x.rs.getInt("ParwareID");
+                id2 =x.rs.getInt("ParwareID");
             }
             
             sql="select * from "+g+" where Item= '"+h+"'";
             x.rs=x.st.executeQuery(sql);
             System.out.println(sql);
             while(x.rs.next()){
+                
+                connectivity l=new connectivity();
                 int j= x.rs.getInt("Quantity");
                 
                 int H=x.rs.getInt("H");
@@ -133,32 +136,53 @@ public class Cart implements Initializable {
                 if(j<t){
                     //out of stock
                     Alert a= new Alert(Alert.AlertType.ERROR);
-                    String okok="Item "+h+" is out of stock";
+                    String okok="Item "+h+" is out of stock. Quantity not sufficient.";
                     a.setContentText(okok);
                     a.show();
-                }else{
+                }else if(funds<money) {
+                    Alert a= new Alert(Alert.AlertType.ERROR);
+                    String okok="Not Enough Funds!";
+                    a.setContentText(okok);
+                    a.show();
+                }
+                else{
                     int lol=j-t;
                     sql="update "+g+" set Quantity ="+lol+" where Item = '"+h+"'";
                     System.out.println(sql);
-                    x.st.executeUpdate(sql);
+                    l.st.executeUpdate(sql);
+                    sql="delete from c"+id+" where Item = '"+h+"'";
+                    System.out.println(sql);
+                    l.st.executeUpdate(sql);
+                    funds-=money;
+                    Alert a=new Alert(Alert.AlertType.INFORMATION);
+                    String purchase="Purcase of "+h+" successful. Thanks for shopping with us";
+                    a.setContentText(purchase);
+                    a.show();
                     if(lol==0){
                         int quant= (2*D*K)/H;
                         quant=(int) Math.sqrt(quant);
                         sql="insert into storetowareorders (Store,WareID,Item,Quantity)"
-                                + " values ('"+g+"',"+id+",'"+h+"',"+quant+")";
+                                + " values ('"+g+"',"+id2+",'"+h+"',"+quant+")";
+                        System.out.println(sql);
+                        l.st.executeUpdate(sql);
                     }
                 }
                 
             }
             
+           
+           
             
+           
         }
               
-        
+        lblfund.setText(""+funds);
+        setset(id,funds,stage);
         
         }
         catch(Exception e){
-            System.out.println("Cant due to : "+e);
+            System.out.println("Cant due to : ");
+            e.printStackTrace();
         }
         
         

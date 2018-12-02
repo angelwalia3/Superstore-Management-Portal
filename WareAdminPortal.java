@@ -95,19 +95,152 @@ public class WareAdminPortal implements Initializable {
         }
         
         
+       int hello=-1;
+        
+        try{
+            
+         String sql = "select * from wareadmins where Warehousename = '"+h+"'";
+        System.out.println(sql);
+        c.rs=c.st.executeQuery(sql);
+        
+        while(c.rs.next()){
+            hello=c.rs.getInt("ID");
+            
+        }
+           
+           
+            
+        String g;
+        sql = "select * from storetowareorders";
+        c.rs=c.st.executeQuery(sql);
+        while(c.rs.next()){
+            if(c.rs.getInt("WareID")==hello){
+                String store=c.rs.getString("Store");
+                String item=c.rs.getString("Item");
+                int qty = c.rs.getInt("Quantity");
+                
+                
+            FXMLLoader fxml=new FXMLLoader();
+            Parent root1 =fxml.load(getClass().getResource("orderpopup.fxml").openStream());
+        
+            orderpopup out = new orderpopup();
+            out=fxml.getController();
+            
+            
+            
+        Scene scene = new Scene(root1);
+        Stage stage=new Stage();
+        stage.setScene(scene);
+        out.setf(h,item,store,qty,stage);
+        stage.show();
+            
+        
+        
+        
+                
+            }
+            
+            
+            
+            
+        }
+        
+        
+        }
+        catch(Exception e){
+            System.out.println("Cant . just cant : "+e);
+        }
         
         
         
         
+        try{
+            
+         String sql = "select * from ack where SendTo = '"+h+"'";
+        System.out.println(sql);
+        c.rs=c.st.executeQuery(sql);
+        if(c.rs.next()==true){
+            FXMLLoader fxml=new FXMLLoader();
+            Parent root1 =fxml.load(getClass().getResource("orderacknow.fxml").openStream());
+            String item=c.rs.getString("Item");
+            int qty =c.rs.getInt("Quantity");
+            orderacknow out = new orderacknow();
+            out=fxml.getController();
+            
+            
+            
+        Scene scene = new Scene(root1);
+        Stage stage=new Stage();
+        stage.setScene(scene);
+        out.setf(h,item,qty,stage);
+        stage.show();
+            
+        }
+         
+        }
+        catch(Exception e){
+            System.out.println("Cant . just cant : "+e);
+        }
         
-    }
     
     
     
+    //-----------------------------------------------
     
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    
+      try{
+            
+         String sql = "select * from waretoware ";
+        System.out.println(sql);
+        c.rs=c.st.executeQuery(sql);
+        while(c.rs.next()){
+            String I=c.rs.getString("Item");
+            int Q=c.rs.getInt("Quantity");
+            
+            connectivity x=new connectivity();
+            sql = "select Quantity from "+h+" where Item='"+I+"'";
+            x.rs=x.st.executeQuery(sql);
+            while(x.rs.next()){
+                if(x.rs.getInt("Quantity")>Q){
+                    
+                    System.out.println("ji");
+                    
+                    FXMLLoader fxml=new FXMLLoader();
+            Parent root1 =fxml.load(getClass().getResource("orderpopup.fxml").openStream());
+        
+            orderpopup out = new orderpopup();
+            out=fxml.getController();
+            
+            
+            
+        Scene scene = new Scene(root1);
+        Stage stage=new Stage();
+        stage.setScene(scene);
+        out.setf(h,I,c.rs.getString("OrderedBy"),Q,stage);
+        stage.show();
+            
+        
+        
+                    
+                }
+            }
+            
+            
+            
+            
+            
+        }
+            
+        
+         
+        }
+        catch(Exception e){
+            System.out.println("Cant . just cant : "+e);
+        }
+        
+    
+    
+    
     }    
 
     @FXML
@@ -163,7 +296,19 @@ public class WareAdminPortal implements Initializable {
         s.setTitle("Error");
         s.setContentText("Invalid request: "+e);
         s.show();
-        }
+        } 
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        
         
     }
 
