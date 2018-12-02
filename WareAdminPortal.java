@@ -58,6 +58,7 @@ public class WareAdminPortal implements Initializable {
     @FXML
     private Button btnlogout;
 
+    
     /**
      * Initializes the controller class.
      */

@@ -29,7 +29,7 @@ import javafx.stage.Stage;
  *
  * @author Pallavi
  */
-public class subcategory implements Initializable {
+public class subcategory_1 implements Initializable {
 
     @FXML
     private AnchorPane backpane;
@@ -59,6 +59,11 @@ public class subcategory implements Initializable {
     private Button btnsortsub;
     @FXML
     private Button btnsortitem;
+    
+    private int custid;
+    public void getid(int id){
+        this.custid=id;
+    }
     
     
     public void getname(String s,String own){
@@ -167,17 +172,16 @@ public class subcategory implements Initializable {
         String r=itemlist.getSelectionModel().getSelectedItem();
         try{
             FXMLLoader fxml=new FXMLLoader();
-            Parent root1 =fxml.load(getClass().getResource("Iteminfoforadmins.fxml").openStream());
-        
-            Iteminfoforadmins out = new Iteminfoforadmins();
+            Parent root1 =fxml.load(getClass().getResource("waitingtoaddtocart.fxml").openStream());
+        //
+            waitingtoaddtocart out = new waitingtoaddtocart();
             out=fxml.getController();
-            if(h.equals(ow)){
-                out.getname(r,h,1);
-            } else  out.getname(r,h,0);
+            
             
         Scene scene = new Scene(root1);
         Stage stage=new Stage();
         stage.setScene(scene);
+        out.setset(h, custid, stage,r);
         stage.show();
             
         }
